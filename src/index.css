@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Kiwiana-inspired color palette */
+    --background: 45 30% 98%;
+    --foreground: 160 25% 15%;
+
+    --card: 45 25% 96%;
+    --card-foreground: 160 25% 15%;
+
+    --popover: 45 30% 98%;
+    --popover-foreground: 160 25% 15%;
+
+    /* Deep forest green - primary brand color */
+    --primary: 160 45% 22%;
+    --primary-foreground: 45 30% 98%;
+
+    /* Warm amber/gold - accent for CTAs */
+    --secondary: 38 85% 55%;
+    --secondary-foreground: 160 25% 15%;
+
+    /* Soft sage green */
+    --muted: 150 20% 92%;
+    --muted-foreground: 160 15% 40%;
+
+    /* Teal accent */
+    --accent: 175 50% 40%;
+    --accent-foreground: 45 30% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 30% 98%;
+
+    --border: 150 15% 85%;
+    --input: 150 15% 85%;
+    --ring: 160 45% 22%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(160, 45%, 22%) 0%, hsl(175, 50%, 35%) 50%, hsl(160, 40%, 28%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(38, 85%, 55%) 0%, hsl(28, 80%, 50%) 100%);
+    --gradient-nature: linear-gradient(180deg, hsl(150, 30%, 95%) 0%, hsl(45, 30%, 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(45, 25%, 98%) 0%, hsl(150, 20%, 96%) 100%);
+    --gradient-footer: linear-gradient(180deg, hsl(160, 45%, 18%) 0%, hsl(160, 50%, 12%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(160, 30%, 20%, 0.1);
+    --shadow-card: 0 8px 32px -8px hsl(160, 30%, 20%, 0.12);
+    --shadow-elevated: 0 16px 48px -12px hsl(160, 30%, 20%, 0.15);
+    --shadow-glow: 0 0 40px hsl(38, 85%, 55%, 0.3);
+
+    --sidebar-background: 45 30% 98%;
+    --sidebar-foreground: 160 25% 15%;
+    --sidebar-primary: 160 45% 22%;
+    --sidebar-primary-foreground: 45 30% 98%;
+    --sidebar-accent: 150 20% 92%;
+    --sidebar-accent-foreground: 160 25% 15%;
+    --sidebar-border: 150 15% 85%;
+    --sidebar-ring: 160 45% 22%;
+  }
+
+  .dark {
+    --background: 160 30% 8%;
+    --foreground: 45 20% 95%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 160 25% 12%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 150 40% 50%;
+    --primary-foreground: 160 30% 8%;
+
+    --secondary: 38 75% 50%;
+    --secondary-foreground: 160 30% 8%;
+
+    --muted: 160 20% 18%;
+    --muted-foreground: 150 15% 65%;
+
+    --accent: 175 45% 45%;
+    --accent-foreground: 160 30% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 45 20% 95%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 20%;
+    --ring: 150 40% 50%;
+
+    --sidebar-background: 160 25% 10%;
+    --sidebar-foreground: 45 20% 95%;
+    --sidebar-primary: 150 40% 50%;
+    --sidebar-primary-foreground: 160 30% 8%;
+    --sidebar-accent: 160 20% 18%;
+    --sidebar-accent-foreground: 45 20% 95%;
+    --sidebar-border: 160 20% 20%;
+    --sidebar-ring: 150 40% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .text-gradient-warm {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-warm);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .bg-gradient-nature {
+    background: var(--gradient-nature);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-footer {
+    background: var(--gradient-footer);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Fern pattern overlay */
+  .fern-pattern {
+    position: relative;
+  }
+
+  .fern-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 Q60 30 50 50 Q40 30 50 10' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  /* Organic wave shape */
+  .wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fadeUp 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fadeUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delay {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 3s ease-in-out infinite;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Scroll reveal animation trigger */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
