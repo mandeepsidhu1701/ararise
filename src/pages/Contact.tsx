@@ -131,7 +131,7 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="lg:col-span-1">
               <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                Contact Information I am sorry meri jaan I love you
+                Contact Information
               </h2>
               
               <div className="space-y-6 mb-10">
