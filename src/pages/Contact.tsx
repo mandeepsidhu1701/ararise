@@ -20,14 +20,14 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["Auckland, New Zealand"],
+    details: ["121,Moore Street,Howick, New Zealand"],
     action: null,
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+64 (0) 000 0000"],
-    action: "tel:+64000000000",
+    details: ["+64 (22) 677 4582"],
+    action: "tel:+64226774582",
   },
   {
     icon: Mail,
