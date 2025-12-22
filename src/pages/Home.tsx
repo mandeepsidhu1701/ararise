@@ -159,9 +159,9 @@ export default function Home() {
             {/* Stats */}
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { value: "500+", label: "Students Guided" },
+                
                 { value: "50+", label: "Partner Institutions" },
-                { value: "98%", label: "Success Rate" },
+               
                 { value: "24/7", label: "Support Available" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
