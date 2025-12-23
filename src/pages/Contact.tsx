@@ -77,17 +77,37 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const res = await fetch(import.meta.env.VITE_CONTACT_API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        country: formData.country,
+        destination: formData.studyDestination, // API expects "destination"
+        level: formData.studyLevel,             // API expects "level"
+        message: formData.message,
+        website: "" // honeypot (keep empty)
+      }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || `Submission failed (${res.status})`);
+    }
+
     toast({
       title: "Thank you for reaching out!",
       description: "We've received your message and will get back to you within 24 hours.",
     });
-    
+
     setFormData({
       firstName: "",
       lastName: "",
@@ -98,8 +118,19 @@ export default function Contact() {
       studyLevel: "",
       message: "",
     });
+  } catch (err: any) {
+    toast({
+      title: "Sorry — something went wrong",
+      description:
+        err?.message ||
+        "We couldn't send your message right now. Please try again in a minute.",
+      variant: "destructive",
+    });
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
+
 
   return (
     <Layout>
