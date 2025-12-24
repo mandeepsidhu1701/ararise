@@ -205,7 +205,7 @@ export default function Contact() {
                   className="w-full"
                   asChild
                 >
-                  <a href="https://wa.me/64000000000" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/+64226774582" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-5 h-5" />
                     Chat on WhatsApp
                   </a>
