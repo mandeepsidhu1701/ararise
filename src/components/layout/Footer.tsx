@@ -29,7 +29,7 @@ export function Footer() {
     <footer className="bg-gradient-footer text-primary-foreground">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
@@ -94,19 +94,19 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-5">Contact Us</h4>
+            <h4 className="font-display font-semibold text-lg mb-5">NZ office</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 text-secondary" />
                 <span className="text-sm text-primary-foreground/80">
-                  121, Moore Street,
-                  Howick, 2014,
-                  Auckland, New Zealand
+                  121, Moore Street,<br />
+                  Howick, 2014, <br />
+                  Auckland, New Zealand<br />
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary" />
-                <a href="tel:+64000000000" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="tel:+64 226774582" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   +64 226774582
                 </a>
               </li>
@@ -123,6 +123,45 @@ export function Footer() {
                 Mon - Fri: 9:00 AM - 6:00 PM<br />
                 Sat: 10:00 AM - 2:00 PM
               </p>
+            </div>
+          </div>
+          {/* Contact info india */}
+          <div>
+            <h4 className="font-display font-semibold text-lg mb-5">India office</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 mt-0.5 text-secondary" />
+                <span className="text-sm text-primary-foreground/80">
+                  19-20, New Sanganer Rd, <br />
+                  Mansarovar, Jaipur, <br />
+                  Rajasthan 302020
+                </span>
+              </li>    
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 mt-0.5 text-secondary" />
+                <span className="text-sm text-primary-foreground/80">               
+                   I-5/11, <br />
+                   Ground Floor, Sector-16, <br />
+                   Rohini, Delhi 110089
+                </span>
+              </li>
+
+            </ul>
+            <div className="mt-6 p-4 bg-primary-foreground/10 rounded-xl">
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-secondary" />
+                <a href="tel:+91 9971446655" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  +91 9971446655
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-secondary" />
+                <a href="mailto:hello@ararise.co.nz" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  hello@ararise.co.nz
+                </a>
+              </li>
+            </ul>
             </div>
           </div>
         </div>
