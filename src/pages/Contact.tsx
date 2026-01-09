@@ -19,7 +19,7 @@ import { useToast } from "@/hooks/use-toast";
 const contactInfo = [
   {
     icon: MapPin,
-    title: "Visit Us",
+    title: "Visit Us in New Zealand",
     details: ["121,Moore Street,Howick, New Zealand"],
     action: null,
   },
@@ -40,6 +40,30 @@ const contactInfo = [
     title: "Office Hours",
     details: ["Mon-Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 2:00 PM"],
     action: null,
+  },
+  {
+    icon: MapPin,
+    title: "Visit Us In Jaipur, India",
+    details: ["19-20, New Sanganer Rd,Mansarovar, Jaipur,Rajasthan 302020"],
+    action: null,
+  },
+  {
+    icon: MapPin,
+    title: "Visit Us In New Delhi, India",
+    details: ["I-5/11,Ground Floor, Sector-16,Rohini, Delhi 110089"],
+    action: null,
+  },
+  {
+    icon: Phone,
+    title: "Call Us",
+    details: ["+91 (997) 144 6655"],
+    action: "tel:+91 9971446655",
+  },
+  {
+    icon: Mail,
+    title: "Email Us",
+    details: ["hello@ararise.co.nz"],
+    action: "mailto:hello@ararise.co.nz",
   },
 ];
 
